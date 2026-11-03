@@ -24,7 +24,8 @@
     
     .navbar { max-width: 1100px; margin: 0 auto; padding: 18px 20px; display: flex; justify-content: space-between; align-items: center; gap: 16px; }
     .brand-group { display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; gap: 2px; }
-       /* Default Logo Style */
+    
+    /* Default Logo Style */
     .brand-logo-img { 
       width: clamp(140px, 26vw, 210px); 
       height: auto; 
@@ -48,7 +49,7 @@
     .container { max-width: 1040px; margin: 0 auto; padding: 16px 20px 30px; }
     .hero { text-align: center; padding: 20px 0 40px; }
 
-    /* Custom Pill Matching Reference Image */
+    /* Custom Pill Matching Screenshot */
     .badge-pill-container { display: flex; justify-content: center; margin-bottom: 24px; }
     .badge-wrap { display: inline-flex; align-items: center; justify-content: center; gap: 14px; background: var(--bg-card); border: 1.5px solid rgba(212,175,55,0.45); border-radius: 40px; padding: 10px 22px; font-family: 'JetBrains Mono', monospace; font-size: 10.5px; color: var(--gold-light); line-height: 1.35; box-shadow: 0 4px 16px rgba(0,0,0,0.45); }
     .badge-col { display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; }
@@ -108,7 +109,7 @@
       <img src="logo.png" alt="Hyper Quantitative Labs" class="brand-logo-img">
       <span class="brand-subtext">ALPHA CORE &bull; ORDERFLOW EXECUTION</span>
     </div>
-    <button class="cta-nav-btn" id="ctaAccessBtn">Request<br class="mobile-break"> Allocation</button>
+    <button class="cta-nav-btn" id="ctaAccessBtn">Request Allocation</button>
   </header>
 
   <main class="container">
@@ -265,10 +266,12 @@
     <p style="margin-top:6px;">Trading spot and leveraged instruments involves substantial risk of loss. For educational and research purposes only.</p>
   </footer>
 
-  <!-- Floating Audio Player Widget -->
-  <div style="position:fixed;bottom:16px;left:16px;z-index:9999;background:rgba(12,16,23,0.95);border:1.5px solid #d4af37;border-radius:30px;padding:6px 12px;box-shadow:0 8px 24px rgba(0,0,0,0.7);display:flex;align-items:center;gap:8px;">
-    <span style="font-family:'JetBrains Mono',monospace;font-size:11px;font-weight:700;color:#f5d77f;">PLAY MUSIC:</span>
-    <audio controls controlslist="nodownload noplaybackrate" style="height:32px;max-width:180px;" src="https://files.catbox.moe/5womaw.mp3"></audio>
+  <!-- Ultra-Compact Floating Audio Widget -->
+  <div style="position:fixed;bottom:16px;left:16px;z-index:9999;background:rgba(12,16,23,0.95);border:1.5px solid #d4af37;border-radius:999px;padding:5px 12px;box-shadow:0 8px 24px rgba(0,0,0,0.7);display:inline-flex;align-items:center;gap:8px;backdrop-filter:blur(8px);">
+    <audio id="deskAudio" src="https://files.catbox.moe/5womaw.mp3" preload="metadata"></audio>
+    <span style="font-size:13px;line-height:1;">🎵</span>
+    <button id="audioToggleBtn" style="background:linear-gradient(135deg,#f5d77f,#d4af37);color:#000;border:none;border-radius:50%;width:26px;height:26px;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:800;cursor:pointer;padding-left:2px;box-shadow:0 2px 6px rgba(0,0,0,0.4);" aria-label="Play/Pause">▶</button>
+    <span id="audioTimeDisplay" style="font-family:'JetBrains Mono',monospace;font-size:11px;font-weight:700;color:#f5d77f;white-space:nowrap;letter-spacing:0.04em;">0:00 / 1:00</span>
   </div>
 
   <script>
@@ -351,6 +354,48 @@
         updateCalculator();
       }
 
+      // Mini Audio Player Logic
+      const audioEl = document.getElementById('deskAudio');
+      const audioBtn = document.getElementById('audioToggleBtn');
+      const audioTime = document.getElementById('audioTimeDisplay');
+
+      function formatTime(s) {
+        if (isNaN(s)) return '0:00';
+        const m = Math.floor(s / 60);
+        const sec = Math.floor(s % 60);
+        return m + ':' + (sec < 10 ? '0' : '') + sec;
+      }
+
+      if (audioEl && audioBtn && audioTime) {
+        audioBtn.addEventListener('click', function () {
+          if (audioEl.paused) {
+            audioEl.play();
+            audioBtn.innerText = '❚❚';
+            audioBtn.style.paddingLeft = '0px';
+          } else {
+            audioEl.pause();
+            audioBtn.innerText = '▶';
+            audioBtn.style.paddingLeft = '2px';
+          }
+        });
+
+        audioEl.addEventListener('timeupdate', function () {
+          const cur = formatTime(audioEl.currentTime);
+          const dur = formatTime(audioEl.duration || 60);
+          audioTime.innerText = cur + ' / ' + dur;
+        });
+
+        audioEl.addEventListener('loadedmetadata', function () {
+          audioTime.innerText = '0:00 / ' + formatTime(audioEl.duration || 60);
+        });
+
+        audioEl.addEventListener('ended', function () {
+          audioBtn.innerText = '▶';
+          audioBtn.style.paddingLeft = '2px';
+          audioTime.innerText = '0:00 / ' + formatTime(audioEl.duration || 60);
+        });
+      }
+
       document.getElementById('topChatBtn').addEventListener('click', function () {
         openWhatsApp('Hello Himanshu, I would like to make an inquiry regarding the Quantitative Execution Desk.');
       });
@@ -382,3 +427,5 @@
   </script>
 </body>
 </html>
+
+  
