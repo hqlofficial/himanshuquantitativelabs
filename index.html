@@ -13,6 +13,7 @@
     * { box-sizing: border-box; margin: 0; padding: 0; transition: background-color .2s, border-color .2s, color .2s; }
     html { scroll-behavior: smooth; }
     body { background-color: var(--bg); color: var(--text-main); font-family: 'Inter', sans-serif; line-height: 1.5; overflow-x: hidden; padding-bottom: 90px; }
+    
     .ticker-bar { background: var(--ticker-bg); border-bottom: 1px solid var(--border-subtle); padding: 9px 18px; font-family: 'JetBrains Mono', monospace; font-size: 11px; display: flex; justify-content: space-between; align-items: center; position: sticky; top: 0; z-index: 100; backdrop-filter: blur(10px); }
     .ticker-left { display: flex; align-items: center; gap: 8px; color: var(--cyan); letter-spacing: .08em; font-weight: 700; }
     .pulse-dot { width: 7px; height: 7px; border-radius: 50%; background: var(--cyan); box-shadow: 0 0 8px var(--cyan); }
@@ -20,19 +21,27 @@
     .social-btn { background: transparent; border: none; color: var(--text-muted); cursor: pointer; display: inline-flex; align-items: center; gap: 5px; font-family: 'Inter', sans-serif; font-size: 11px; text-decoration: none; padding: 4px 8px; border-radius: 4px; }
     .social-btn:hover { color: var(--gold); }
     .theme-toggle-btn { background: rgba(120,120,120,0.12); border: 1px solid var(--border-subtle); color: var(--text-main); border-radius: 20px; padding: 4px 10px; font-size: 11px; cursor: pointer; font-family: 'JetBrains Mono', monospace; }
-    .navbar { max-width: 1100px; margin: 0 auto; padding: 18px 20px; display: flex; justify-content: space-between; align-items: center; }
-    .brand-group { display: flex; align-items: center; gap: 14px; }
-    .brand-logo-img { width: 50px; height: 50px; object-fit: contain; filter: drop-shadow(0 0 10px rgba(212,175,55,0.35)); flex-shrink: 0; }
-    .brand-text h1 { font-family: 'Cinzel', serif; font-size: clamp(20px, 5.5vw, 57px); font-weight: 800; line-height: 1.1; color: var(--gold-light); }
-    .brand-text span { display: block; font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: 0.16em; color: var(--cyan); margin-top: 4px; }
-    .cta-nav-btn { background: linear-gradient(135deg, #f5d77f, #d4af37 50%, #8c7128); color: #000; font-weight: 800; font-size: 12px; padding: 10px 18px; border-radius: 6px; border: none; cursor: pointer; }
-    .container { max-width: 1040px; margin: 0 auto; padding: 24px 20px 30px; }
-    .hero { text-align: center; padding: 30px 0 40px; }
-    .badge-wrap { display: inline-flex; flex-direction: row; align-items: center; justify-content: center; gap: 10px; background: var(--bg-card); border: 1px solid var(--border); border-radius: 999px; padding: 6px 18px; font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--gold-light); margin-bottom: 20px; white-space: nowrap; max-width: 100%; overflow-x: auto; }
-    .hero-title { font-family: 'Cinzel', serif; font-size: clamp(28px, 5.5vw, 44px); font-weight: 800; line-height: 1.25; margin-bottom: 18px; }
+    
+    .navbar { max-width: 1100px; margin: 0 auto; padding: 18px 20px; display: flex; justify-content: space-between; align-items: center; gap: 16px; }
+    .brand-group { display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; gap: 2px; }
+    .brand-logo-img { width: clamp(140px, 26vw, 210px); height: auto; object-fit: contain; filter: drop-shadow(0 0 12px rgba(212,175,55,0.35)); display: block; }
+    .brand-subtext { display: block; font-family: 'JetBrains Mono', monospace; font-size: clamp(9px, 2.2vw, 11px); letter-spacing: 0.16em; color: var(--cyan); font-weight: 700; margin-top: 2px; }
+    .cta-nav-btn { background: linear-gradient(135deg, #f5d77f, #d4af37 50%, #8c7128); color: #000; font-weight: 800; font-size: 12px; padding: 10px 16px; border-radius: 6px; border: none; cursor: pointer; white-space: nowrap; flex-shrink: 0; }
+    
+    .container { max-width: 1040px; margin: 0 auto; padding: 16px 20px 30px; }
+    .hero { text-align: center; padding: 20px 0 40px; }
+
+    /* Custom Pill Matching Reference Image */
+    .badge-pill-container { display: flex; justify-content: center; margin-bottom: 24px; }
+    .badge-wrap { display: inline-flex; align-items: center; justify-content: center; gap: 14px; background: var(--bg-card); border: 1.5px solid rgba(212,175,55,0.45); border-radius: 40px; padding: 10px 22px; font-family: 'JetBrains Mono', monospace; font-size: 10.5px; color: var(--gold-light); line-height: 1.35; box-shadow: 0 4px 16px rgba(0,0,0,0.45); }
+    .badge-col { display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; }
+    .badge-dot { color: var(--gold); font-size: 14px; line-height: 1; }
+
+    .hero-title { font-family: 'Cinzel', serif; font-size: clamp(26px, 5.5vw, 44px); font-weight: 800; line-height: 1.25; margin-bottom: 18px; text-transform: uppercase; }
     .highlight-gold { background: linear-gradient(180deg, #fbf2c4, #d4af37); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
     .highlight-cyan { color: var(--cyan); }
     .hero-desc { max-width: 680px; margin: 0 auto 36px; font-size: 15px; color: var(--text-muted); line-height: 1.7; }
+    
     .calc-container { max-width: 720px; margin: 0 auto 50px; }
     .calc-slider-box { background: var(--bg-card); border: 1.5px solid var(--border); border-radius: 12px; padding: 20px; margin-bottom: 16px; }
     .slider-row { display: flex; flex-direction: column; gap: 6px; margin-top: 14px; }
@@ -79,22 +88,28 @@
 
   <header class="navbar">
     <div class="brand-group">
-      <img src="logo.png" alt="Hyper Quantitative Labs Logo" class="brand-logo-img">
-      <div class="brand-text">
-        <h1>HYPER QUANTITATIVE LABS</h1>
-        <span>ALPHA CORE &bull; ORDERFLOW EXECUTION</span>
-      </div>
+      <img src="logo.png" alt="Hyper Quantitative Labs" class="brand-logo-img">
+      <span class="brand-subtext">ALPHA CORE &bull; ORDERFLOW EXECUTION</span>
     </div>
-    <button class="cta-nav-btn" id="ctaAccessBtn">Request Allocation</button>
+    <button class="cta-nav-btn" id="ctaAccessBtn">Request<br class="mobile-break"> Allocation</button>
   </header>
 
   <main class="container">
     <section class="hero">
-      <div class="badge-wrap">
-        <span>⚡ PROPRIETARY M1 XAU/USD ASYMMETRIC MODEL</span>
-        <span>•</span>
-        <span>1:4.45+ ASYMMETRY</span>
+      <div class="badge-pill-container">
+        <div class="badge-wrap">
+          <div class="badge-col">
+            <span>⚡ PROPRIETARY M1</span>
+            <span>XAU/USD ASYMMETRIC MODEL</span>
+          </div>
+          <div class="badge-dot">•</div>
+          <div class="badge-col">
+            <span>1:4.45+</span>
+            <span>ASYMMETRY</span>
+          </div>
+        </div>
       </div>
+
       <h2 class="hero-title">
         Exploit Institutional Liquidity Sweeps with <span class="highlight-cyan">+EV Expectancy</span> and <span class="highlight-gold">Structured Risk.</span>
       </h2>
@@ -227,7 +242,8 @@
         </div>
       </div>
     </section>
-  </main>  <footer class="footer">
+  </main>
+    <footer class="footer">
     <strong>HYPER QUANTITATIVE LABS</strong>
     <p style="margin-top:6px;">Trading spot and leveraged instruments involves substantial risk of loss. For educational and research purposes only.</p>
   </footer>
