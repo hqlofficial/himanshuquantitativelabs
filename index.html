@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Himanshu Quantitative Labs | Orderflow Execution Desk</title>
+  <title>Hyper Quantitative Labs | Orderflow Execution Desk</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
@@ -22,13 +22,13 @@
     .theme-toggle-btn { background: rgba(120,120,120,0.12); border: 1px solid var(--border-subtle); color: var(--text-main); border-radius: 20px; padding: 4px 10px; font-size: 11px; cursor: pointer; font-family: 'JetBrains Mono', monospace; }
     .navbar { max-width: 1100px; margin: 0 auto; padding: 18px 20px; display: flex; justify-content: space-between; align-items: center; }
     .brand-group { display: flex; align-items: center; gap: 14px; }
-    .brand-logo-box { width: 44px; height: 44px; border: 1.5px solid var(--gold); border-radius: 9px; display: flex; align-items: center; justify-content: center; font-family: 'Cinzel', serif; font-size: 15px; font-weight: 700; color: var(--gold-light); background: rgba(212,175,55,0.06); }
+    .brand-logo-img { width: 50px; height: 50px; object-fit: contain; filter: drop-shadow(0 0 10px rgba(212,175,55,0.35)); flex-shrink: 0; }
     .brand-text h1 { font-family: 'Cinzel', serif; font-size: clamp(20px, 5.5vw, 57px); font-weight: 800; line-height: 1.1; color: var(--gold-light); }
     .brand-text span { display: block; font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: 0.16em; color: var(--cyan); margin-top: 4px; }
     .cta-nav-btn { background: linear-gradient(135deg, #f5d77f, #d4af37 50%, #8c7128); color: #000; font-weight: 800; font-size: 12px; padding: 10px 18px; border-radius: 6px; border: none; cursor: pointer; }
     .container { max-width: 1040px; margin: 0 auto; padding: 24px 20px 30px; }
     .hero { text-align: center; padding: 30px 0 40px; }
-    .badge-wrap { display: inline-flex; align-items: center; gap: 10px; background: var(--bg-card); border: 1px solid var(--border); border-radius: 999px; padding: 6px 16px; font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--gold-light); margin-bottom: 20px; }
+    .badge-wrap { display: inline-flex; flex-direction: row; align-items: center; justify-content: center; gap: 10px; background: var(--bg-card); border: 1px solid var(--border); border-radius: 999px; padding: 6px 18px; font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--gold-light); margin-bottom: 20px; white-space: nowrap; max-width: 100%; overflow-x: auto; }
     .hero-title { font-family: 'Cinzel', serif; font-size: clamp(28px, 5.5vw, 44px); font-weight: 800; line-height: 1.25; margin-bottom: 18px; }
     .highlight-gold { background: linear-gradient(180deg, #fbf2c4, #d4af37); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
     .highlight-cyan { color: var(--cyan); }
@@ -79,9 +79,9 @@
 
   <header class="navbar">
     <div class="brand-group">
-      <div class="brand-logo-box">HQL</div>
+      <img src="logo.png" alt="Hyper Quantitative Labs Logo" class="brand-logo-img">
       <div class="brand-text">
-        <h1>HIMANSHU QUANTITATIVE LABS</h1>
+        <h1>HYPER QUANTITATIVE LABS</h1>
         <span>ALPHA CORE &bull; ORDERFLOW EXECUTION</span>
       </div>
     </div>
@@ -173,7 +173,8 @@
         </div>
       </div>
     </section>
-        <section>
+
+    <section>
       <div class="section-head">
         <span class="section-tag">Direct Institutional Access</span>
         <h3 class="section-title">Select Your Framework</h3>
@@ -226,13 +227,12 @@
         </div>
       </div>
     </section>
-  </main>
-  <footer class="footer">
-    <strong>HIMANSHU QUANTITATIVE LABS</strong>
+  </main>  <footer class="footer">
+    <strong>HYPER QUANTITATIVE LABS</strong>
     <p style="margin-top:6px;">Trading spot and leveraged instruments involves substantial risk of loss. For educational and research purposes only.</p>
   </footer>
 
-  <!-- Floating Audio Player Widget (Moved to Bottom Left so it does not overlap Voiceflow) -->
+  <!-- Floating Audio Player Widget -->
   <div style="position:fixed;bottom:16px;left:16px;z-index:9999;background:rgba(12,16,23,0.95);border:1.5px solid #d4af37;border-radius:30px;padding:6px 12px;box-shadow:0 8px 24px rgba(0,0,0,0.7);display:flex;align-items:center;gap:8px;">
     <span style="font-family:'JetBrains Mono',monospace;font-size:11px;font-weight:700;color:#f5d77f;">PLAY MUSIC:</span>
     <audio controls controlslist="nodownload noplaybackrate" style="height:32px;max-width:180px;" src="https://files.catbox.moe/5womaw.mp3"></audio>
@@ -347,5 +347,5 @@
       onCapitalChange();
     })();
   </script>
- </body>
+</body>
 </html>
