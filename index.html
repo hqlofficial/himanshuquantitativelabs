@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Hyper Quantitative Labs | Orderflow Execution Desk</title>
+  <title>Hyper Quantitative Labs | Proprietary Execution Desk</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
@@ -22,7 +22,6 @@
     .social-btn:hover { color: var(--gold); }
     .theme-toggle-btn { background: rgba(120,120,120,0.12); border: 1px solid var(--border-subtle); color: var(--text-main); border-radius: 20px; padding: 4px 10px; font-size: 11px; cursor: pointer; font-family: 'JetBrains Mono', monospace; }
     
-    /* Centered Mobile Navbar with No Dead Spaces */
     .navbar { 
       max-width: 1100px; 
       margin: 0 auto; 
@@ -52,7 +51,6 @@
       gap: 4px; 
     }
 
-    /* Default Logo Style */
     .brand-logo-img { 
       width: clamp(150px, 34vw, 210px); 
       height: auto; 
@@ -63,7 +61,6 @@
       transition: filter 0.3s ease, background 0.3s ease;
     }
 
-    /* Light Mode Visibility Enhancement */
     :root[data-theme="light"] .brand-logo-img {
       filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.75)) drop-shadow(0 0 2px rgba(0, 0, 0, 0.9));
       background: radial-gradient(ellipse at center, rgba(12, 16, 23, 0.85) 40%, rgba(12, 16, 23, 0) 75%);
@@ -98,7 +95,6 @@
     .container { max-width: 1040px; margin: 0 auto; padding: 12px 20px 30px; }
     .hero { text-align: center; padding: 14px 0 40px; }
 
-    /* Custom Pill Matching Screenshot */
     .badge-pill-container { display: flex; justify-content: center; margin-bottom: 24px; }
     .badge-wrap { display: inline-flex; align-items: center; justify-content: center; gap: 14px; background: var(--bg-card); border: 1.5px solid rgba(212,175,55,0.45); border-radius: 40px; padding: 10px 22px; font-family: 'JetBrains Mono', monospace; font-size: 10.5px; color: var(--gold-light); line-height: 1.35; box-shadow: 0 4px 16px rgba(0,0,0,0.45); }
     .badge-col { display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; }
@@ -124,22 +120,24 @@
     .section-head { text-align: center; margin-bottom: 36px; }
     .section-tag { font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: .14em; color: var(--gold); text-transform: uppercase; }
     .section-title { font-family: 'Cinzel', serif; font-size: 32px; font-weight: 700; }
-    .pricing-wrap { display: grid; grid-template-columns: 1fr; gap: 24px; max-width: 880px; margin: 0 auto 40px; }
-    @media (min-width: 768px) { .pricing-wrap { grid-template-columns: 1fr 1fr; } }
-    .price-card { background: var(--bg-card); border: 1px solid var(--border-subtle); border-radius: 14px; padding: 26px; display: flex; flex-direction: column; justify-content: space-between; position: relative; }
-    .price-card.featured { border: 1.5px solid var(--gold); background: linear-gradient(180deg, rgba(212,175,55,0.05), var(--bg-card) 40%); }
-    .card-ribbon { position: absolute; top: -12px; left: 50%; transform: translateX(-50%); background: linear-gradient(135deg, #f5d77f, #d4af37); color: #000; font-family: 'JetBrains Mono', monospace; font-size: 10px; font-weight: 700; padding: 4px 12px; border-radius: 20px; letter-spacing: .08em; }
+    
+    .pricing-wrap { display: flex; justify-content: center; max-width: 640px; margin: 0 auto 40px; }
+    .price-card { background: var(--bg-card); border: 1px solid var(--border-subtle); border-radius: 16px; padding: 34px 28px; display: flex; flex-direction: column; justify-content: space-between; position: relative; width: 100%; }
+    .price-card.featured { border: 1.5px solid var(--gold); background: linear-gradient(180deg, rgba(212,175,55,0.07), var(--bg-card) 45%); box-shadow: 0 10px 30px rgba(0,0,0,0.6); }
+    .card-ribbon { position: absolute; top: -13px; left: 50%; transform: translateX(-50%); background: linear-gradient(135deg, #f5d77f, #d4af37); color: #000; font-family: 'JetBrains Mono', monospace; font-size: 10.5px; font-weight: 800; padding: 4px 16px; border-radius: 20px; letter-spacing: .08em; white-space: nowrap; }
     .tier-badge { display: inline-block; font-family: 'JetBrains Mono', monospace; font-size: 10px; font-weight: 700; color: var(--gold); text-transform: uppercase; margin-bottom: 8px; }
-    .tier-name { font-family: 'Cinzel', serif; font-size: 22px; font-weight: 700; margin-bottom: 8px; }
-    .tier-summary { font-size: 13px; color: var(--text-muted); margin-bottom: 20px; }
-    .price-block { border-top: 1px solid var(--border-subtle); border-bottom: 1px solid var(--border-subtle); padding: 14px 0; margin-bottom: 18px; }
-    .price-num { font-family: 'Cinzel', serif; font-size: 38px; font-weight: 800; color: var(--gold-light); line-height: 1; }
-    .price-curr { font-family: 'JetBrains Mono', monospace; font-size: 12px; color: var(--text-muted); margin-top: 4px; display: block; }
-    .tier-features { list-style: none; margin-bottom: 28px; display: flex; flex-direction: column; gap: 12px; }
-    .tier-features li { font-size: 13.5px; display: flex; align-items: flex-start; gap: 10px; color: var(--text-main); }
+    .tier-name { font-family: 'Cinzel', serif; font-size: 26px; font-weight: 700; margin-bottom: 8px; }
+    .tier-summary { font-size: 13.5px; color: var(--text-muted); margin-bottom: 22px; line-height: 1.6; }
+    .price-block { border-top: 1px solid var(--border-subtle); border-bottom: 1px solid var(--border-subtle); padding: 16px 0; margin-bottom: 22px; }
+    .price-num { font-family: 'Cinzel', serif; font-size: 44px; font-weight: 800; color: var(--gold-light); line-height: 1; }
+    .price-curr { font-family: 'JetBrains Mono', monospace; font-size: 12px; color: var(--text-muted); margin-top: 6px; display: block; }
+    .tier-features { list-style: none; margin-bottom: 30px; display: flex; flex-direction: column; gap: 14px; }
+    .tier-features li { font-size: 13.5px; display: flex; align-items: flex-start; gap: 10px; color: var(--text-main); line-height: 1.45; }
     .tier-actions { display: flex; flex-direction: column; gap: 10px; }
-    .btn-action-primary { background: var(--green); color: #000; font-weight: 700; font-size: 13.5px; padding: 14px; border-radius: 6px; border: none; cursor: pointer; }
-    .btn-action-secondary { background: rgba(120,120,120,0.05); border: 1px solid var(--border-subtle); color: var(--text-main); font-weight: 600; font-size: 13px; padding: 12px; border-radius: 6px; cursor: pointer; }
+    .btn-action-primary { background: linear-gradient(135deg, #00e676, #00b0ff); color: #000; font-weight: 800; font-size: 14px; padding: 15px; border-radius: 8px; border: none; cursor: pointer; transition: transform .15s ease, opacity .15s ease; }
+    .btn-action-primary:hover { opacity: 0.95; transform: translateY(-1px); }
+    .btn-action-secondary { background: rgba(120,120,120,0.06); border: 1px solid var(--border-subtle); color: var(--text-main); font-weight: 600; font-size: 13px; padding: 13px; border-radius: 8px; cursor: pointer; }
+    .btn-action-secondary:hover { border-color: var(--gold); }
     .footer { border-top: 1px solid var(--border-subtle); padding: 30px 20px; text-align: center; font-size: 12px; color: var(--text-muted); }
   </style>
 </head>
@@ -181,7 +179,7 @@
         Exploit Institutional Liquidity Sweeps with <span class="highlight-cyan">+EV Expectancy</span> and <span class="highlight-gold">Structured Risk.</span>
       </h2>
       <p class="hero-desc">
-        An institutional-grade intraday orderflow framework engineered to isolate high-conviction momentum bursts on Gold (XAU/USD). Learn to identify institutional accumulation footprints, mitigate drawdowns with mathematical precision, and execute asymmetric risk distributions.
+        A closed proprietary intraday orderflow framework engineered to isolate high-conviction liquidity sweep bursts on Gold (XAU/USD). Zero retail theories. Cloud-executed algorithmic tooling and real-time execution parameters across all devices.
       </p>
 
       <div class="calc-container">
@@ -258,53 +256,32 @@
 
     <section>
       <div class="section-head">
-        <span class="section-tag">Direct Institutional Access</span>
-        <h3 class="section-title">Select Your Framework</h3>
+        <span class="section-tag">Proprietary Terminal Access</span>
+        <h3 class="section-title">Institutional Allocation</h3>
       </div>
 
       <div class="pricing-wrap">
-        <div class="price-card" id="tierOneCard">
+        <div class="price-card featured" id="institutionalCard">
+          <div class="card-ribbon">STRICT ALLOCATION • INVITE-ONLY</div>
           <div>
-            <span class="tier-badge">Self-Paced Execution</span>
-            <h4 class="tier-name">The Execution Specification</h4>
-            <p class="tier-summary">The complete institutional Gold scalp blueprint with full setup rules and mathematical risk protocols.</p>
+            <span class="tier-badge">Systematic Execution Desk</span>
+            <h4 class="tier-name">Institutional Desk Allocation</h4>
+            <p class="tier-summary">Direct access to proprietary invite-only trading indicators, automated real-time execution parameters, and quantitative gold orderflow infrastructure.</p>
             <div class="price-block">
-              <span class="price-num">₹9,999</span>
-              <span class="price-curr">INR (~$119 USD)</span>
+              <span class="price-num">₹40,000</span>
+              <span class="price-curr">ONE-TIME INSTITUTIONAL SEAT ALLOCATION (~$480 USD)</span>
             </div>
             <ul class="tier-features">
-              <li>✓ Complete M1 Gold Execution Protocol (Institutional Standard)</li>
-              <li>✓ Institutional Liquidity &amp; Sweep Identification Blueprint</li>
-              <li>✓ The +EV Risk &amp; Capital Preservation Formula</li>
-              <li>✓ Direct Implementation Desk Access via WhatsApp</li>
+              <li>✓ <strong>Proprietary TradingView Invite-Only Script:</strong> Cloud-executed directly on your username. Zero source code leakage; zero installation friction across iOS, Android, and PC.</li>
+              <li>✓ <strong>Real-Time Execution Webhook Feed:</strong> Instant parameter broadcast (Entry, Dynamic Stop Loss, Invalidation, 1:4.45+ TP targets).</li>
+              <li>✓ <strong>Universal Device Compatibility:</strong> Seamless trade execution on any modern smartphone or trading terminal.</li>
+              <li>✓ <strong>Private Desk Channel Access:</strong> Real-time institutional liquidity sweeps, order book imbalances, and session risk audits.</li>
+              <li>✓ <strong>Zero Retail Noise:</strong> Strict mathematical edge with automated 3-SL daily circuit breaker protocols.</li>
             </ul>
           </div>
           <div class="tier-actions">
-            <button class="btn-action-primary" id="buyPlaybookWa">Acquire Specification on WhatsApp</button>
-            <button class="btn-action-secondary" id="buyPlaybookIg">Inquire via Instagram DM (@hqlofficial)</button>
-          </div>
-        </div>
-
-        <div class="price-card featured" id="tierTwoCard">
-          <div class="card-ribbon">EXCLUSIVE • 5 TRADERS / MONTH</div>
-          <div>
-            <span class="tier-badge">Private Intensive</span>
-            <h4 class="tier-name">Elite 1-on-1 Desk Mentorship</h4>
-            <p class="tier-summary">Direct personal training with live terminal execution audits and customized scalping feedback.</p>
-            <div class="price-block">
-              <span class="price-num">₹29,999</span>
-              <span class="price-curr">INR (~$359 USD)</span>
-            </div>
-            <ul class="tier-features">
-              <li>✓ Includes Full Core Execution Specification</li>
-              <li>✓ 1-on-1 Private Live Screen-Share Sessions</li>
-              <li>✓ Personal Live Trade &amp; Terminal Orderflow Audits</li>
-              <li>✓ Direct Priority Desk Communication Channel</li>
-            </ul>
-          </div>
-          <div class="tier-actions">
-            <button class="btn-action-primary" id="applyMentorWa">Apply for Mentorship (WhatsApp)</button>
-            <button class="btn-action-secondary" id="applyMentorIg">Apply on Instagram DM (@hqlofficial)</button>
+            <button class="btn-action-primary" id="applyDeskWa">Request Desk Allocation via WhatsApp</button>
+            <button class="btn-action-secondary" id="applyDeskIg">Inquire on Instagram DM (@hqlofficial)</button>
           </div>
         </div>
       </div>
@@ -312,7 +289,7 @@
   </main>
     <footer class="footer">
     <strong>HYPER QUANTITATIVE LABS</strong>
-    <p style="margin-top:6px;">Trading spot and leveraged instruments involves substantial risk of loss. For educational and research purposes only.</p>
+    <p style="margin-top:6px;">Proprietary execution infrastructure and mathematical expectancy research. Not retail investment advice. Capital risk applies to all financial market execution.</p>
   </footer>
 
   <!-- Ultra-Compact Floating Audio Widget -->
@@ -337,8 +314,8 @@
         window.location.href = "https://ig.me/m/" + INSTAGRAM_HANDLE;
       }
 
-      function scrollToPlanOne() {
-        const card = document.getElementById('tierOneCard');
+      function scrollToAllocation() {
+        const card = document.getElementById('institutionalCard');
         if (card) {
           const topOffset = card.getBoundingClientRect().top + window.pageYOffset - 75;
           window.scrollTo({ top: topOffset, behavior: 'smooth' });
@@ -403,7 +380,7 @@
         updateCalculator();
       }
 
-      // Mini Audio Player Logic
+      // Audio Logic
       const audioEl = document.getElementById('deskAudio');
       const audioBtn = document.getElementById('audioToggleBtn');
       const audioTime = document.getElementById('audioTimeDisplay');
@@ -446,22 +423,17 @@
       }
 
       document.getElementById('topChatBtn').addEventListener('click', function () {
-        openWhatsApp('Hello Himanshu, I would like to make an inquiry regarding the Quantitative Execution Desk.');
+        openWhatsApp('Hello Himanshu, I would like to inquire about the Institutional Desk Allocation.');
       });
 
-      document.getElementById('buyPlaybookWa').addEventListener('click', function () {
-        openWhatsApp('Hello Himanshu, I would like to acquire The Execution Specification (₹9,999). Please share access and payment details.');
-      });
-
-      document.getElementById('applyMentorWa').addEventListener('click', function () {
-        openWhatsApp('Hello Himanshu, I am applying for the 1-on-1 Desk Mentorship (₹29,999). Please share seat availability and payment details.');
+      document.getElementById('applyDeskWa').addEventListener('click', function () {
+        openWhatsApp('Hello Himanshu, I am applying for the Institutional Desk Allocation (₹40,000). Please share TradingView provisioning and onboarding access.');
       });
 
       document.getElementById('topInstaBtn').addEventListener('click', openInstagram);
       document.getElementById('themeToggleBtn').addEventListener('click', toggleTheme);
-      document.getElementById('ctaAccessBtn').addEventListener('click', scrollToPlanOne);
-      document.getElementById('buyPlaybookIg').addEventListener('click', openInstagram);
-      document.getElementById('applyMentorIg').addEventListener('click', openInstagram);
+      document.getElementById('ctaAccessBtn').addEventListener('click', scrollToAllocation);
+      document.getElementById('applyDeskIg').addEventListener('click', openInstagram);
 
       ['input', 'change'].forEach(function (evt) {
         document.getElementById('capitalSlider').addEventListener(evt, onCapitalChange);
